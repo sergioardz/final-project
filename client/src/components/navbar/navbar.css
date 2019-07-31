@@ -1,0 +1,16 @@
+.navbar {
+    background-color: rgb(233, 233, 233);
+}
+
+.navbar-brand {
+    font-size: calc(1em + 1vw);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+p {
+    font-size: calc(0.7em + 0.7vw);
+    padding-top: 20px;
+}

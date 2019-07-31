@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 import "./App.css";
 
 import Home from "./components/Home";
@@ -98,7 +100,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="block">
+          <Navbar />
+          <p>spaceholder</p>
           <p>isLogged in: {JSON.stringify(this.state.loggedIn)}</p>
           <p>user model: {JSON.stringify(this.state.user)}</p>
           {this.state.loggedIn &&  <button onClick={this.logout}>Logout</button>}      
@@ -110,6 +114,7 @@ class App extends Component {
               </Switch>
             )
           }
+        <Footer />
         </div>
       </Router>
     );

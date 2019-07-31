@@ -22,3 +22,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+body {
+  padding-top: 135px;
+  background-color: rgb(233, 233, 233);
+}
+
+.login-user, .register-user {
+  font-size: calc(0.55em + 0.55vw);
+}

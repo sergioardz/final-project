@@ -3,33 +3,6 @@ const router = express.Router()
 const User = require('../db/models/user')
 const passport = require('../passport')
 
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
-router.get(
-	'/google/callback',
-	passport.authenticate('google', {
-		successRedirect: '/main',
-		failureRedirect: '/login'
-	})
-)
-
-router.get('/twitter', passport.authenticate('twitter', { scope : 'email' }))
-router.get(
-	'/twitter/callback',
-	passport.authenticate('twitter', {
-		successRedirect: '/main',
-		failureRedirect: '/login'
-	})
-)
-
-router.get('/facebook', passport.authenticate('facebook', { scope : ['public_profile', 'email'] }))
-router.get(
-	'/facebook/callback',
-	passport.authenticate('facebook', {
-		successRedirect: '/main',
-		failureRedirect: '/login'
-	})
-)
-
 // this route is just used to get the user basic info
 router.get('/user', (req, res, next) => {
 	console.log("Call /user for loged in user")

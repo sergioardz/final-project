@@ -1,0 +1,3 @@
+footer, .container, h5 {
+    font-size: calc(0.66em + 0.66vw);
+}

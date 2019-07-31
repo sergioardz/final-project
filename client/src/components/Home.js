@@ -5,27 +5,10 @@ import Signup from "../components/Signup";
 
 const links = (
 	<ul>
-		<li>
-			<Link to="/">Home</Link>
-		</li>
-		<li>
-			<Link to="/main">Protected Page</Link>
-		</li>
-		<li>
-			<Link to="/login">Login</Link>
-		</li>
-		<li>
-			<Link to="/signup">Signup</Link>
-		</li>
-		<li>
-			<a href="/auth/google">Google</a>
-		</li>
-		<li>
-			<a href="/auth/facebook">Facebook</a>
-		</li>
-		<li>
-			<a href="/auth/twitter">Twitter</a>
-		</li>		
+		<li><Link to="/">Home</Link></li>
+		<li><Link to="/main">Dashboard</Link></li>
+		<li><Link to="/login">Login</Link></li>
+		<li><Link to="/signup">Register</Link></li>
 	</ul>
 )
 
