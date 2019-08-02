@@ -27,8 +27,12 @@ app.use(passport.session())
 const router = express.Router()
 
 const staticFiles = express.static(path.join(__dirname, '../../client/build'))
+// production
 if (process.env.NODE_ENV === "production") { 
 	app.use(staticFiles) }
+
+// development
+// app.use(staticFiles)
 
 app.use(router)
 
