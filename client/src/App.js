@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
+import Homepage from "./pages/homepage";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import "./App.css";
@@ -102,14 +103,17 @@ class App extends Component {
       <Router>
         <div className="block">
           <Navbar />
-          <p>spaceholder</p>
-          <p>isLogged in: {JSON.stringify(this.state.loggedIn)}</p>
-          <p>user model: {JSON.stringify(this.state.user)}</p>
-          {this.state.loggedIn &&  <button onClick={this.logout}>Logout</button>}      
+          <p className="loginmsg">
+          {this.state.loggedIn &&  
+            <div className="text-right">
+              <button className="btn btn-dark" onClick={this.logout}>Logout
+                </button></div>}      
+            isLogged in: {JSON.stringify(this.state.loggedIn)}, user model: {JSON.stringify(this.state.user)}</p>
           {
             this.state.isReady && (
               <Switch>
                 <PrivateRoute auth={this.state} path="/main" component={Profile} />
+                <Route exact path="/" component={Homepage} />
                 <Route path="/" render={() => <Home login={this.login} logout={this.logout} />} />
               </Switch>
             )

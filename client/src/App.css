@@ -31,3 +31,15 @@ body {
 .login-user, .register-user {
   font-size: calc(0.55em + 0.55vw);
 }
+
+.loginmsg {
+  font-size: calc(0.55em + 0.55vw);
+  text-align: right;
+  padding-right: 20px;
+  color: darkblue;
+  padding-top: 90px;
+}
+
+.logout {
+  text-align: left;
+}

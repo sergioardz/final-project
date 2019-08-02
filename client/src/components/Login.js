@@ -33,25 +33,37 @@ class LoginForm extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />;
     } else {
       return (
-        <div className="LoginForm">
-          <h2>Login</h2>
-          <form>
-            <label htmlFor="email">email: </label>
-            <input
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-            <label htmlFor="password">Password: </label>
-            <input
-              type="password"
-              name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-            <button onClick={this.handleSubmit}>Login</button>
-          </form>
+        <div className="container">
+          <div className="col-lg-3 my-5 mx-auto">
+            <h3 className="text-center">Login</h3>
+            <div className="LoginForm">
+              <form>
+                <div className="form-group">
+                  <label htmlFor="email">E-mail: </label>
+                  <input
+                    class="form-control form-control-sm"
+                    type="text"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password: </label>
+                  <input
+                    class="form-control form-control-sm"
+                    type="password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="text-center">
+                  <button className="btn btn-info" onClick={this.handleSubmit}>Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       );
     }

@@ -4,24 +4,24 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div class="container">
-                <div class="col-lg-3 my-5 mx-auto">
+            <div className="container">
+                <div className="col-lg-3 my-5 mx-auto">
                     <h3 className="text-center">Login</h3>
-                    <form class="login-user" method="POST" action="/login">
-                        <div class="form-group">
+                    <form className="login-user" method="POST" action="/login">
+                        <div className="form-group">
                             <label for="username">Username</label>
-                            <input type="text" id="username" name="username" class="form-control form-control-sm" placeholder="Username" />
+                            <input type="text" id="username" name="username" className="form-control form-control-sm" placeholder="Username" />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" class="form-control form-control-sm" placeholder="Password" />
+                            <input type="password" id="password" name="password" className="form-control form-control-sm" placeholder="Password" />
                         </div>
                         <div className="text-center">
-                            <button id="submit" type="submit" class="btn btn-info">Submit</button>
+                            <button id="submit" type="submit" className="btn btn-info">Submit</button>
                         </div>
                     </form>
                 </div>
-            </div >
+            </div>
         );
     }
 }
