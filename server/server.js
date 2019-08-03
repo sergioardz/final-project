@@ -36,13 +36,11 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(router)
 
+app.use('/auth', require('./routes/auth'))
+// app.use('/main', require('./routes/main'))
+
 // any routes not picked up by the server api will be handled by the react router
 app.use('/*', staticFiles)
-
-
-app.use('/auth', require('./routes/auth'))
-app.use('/main', require('./routes/main'))
-
 
 app.set('port', (process.env.PORT || 3001))
 app.listen(app.get('port'), () => {
