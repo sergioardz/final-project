@@ -54,28 +54,37 @@ body {
 }
 
 #maindash {
-  background-color: aqua;
   text-align: center;
   padding: 10px;
 }
 
 #wait {
-background-color: lightgray;
-padding: 10px;
+  background-color: white;
+  padding-top: 10px;
+  padding-left: 0;
+  padding-bottom: 0;
+  padding-right: 0;
 }
 
 #inprocess {
-  background-color:lightyellow;
-  padding: 10px;
+  background-color:rgba(255, 255, 88, 0.904);
+  padding-top: 10px;
+  padding-left: 0;
+  padding-bottom: 0;
+  padding-right: 0;
 }
 
 #done {
-  background-color:lightgreen;
-  padding: 10px;
+  background-color:rgba(8, 177, 112, 0.644);
+  padding-top: 10px;
+  padding-left: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  font-weight: bolder;
 }
 
 #table {
-  background-color: white;
+  background-color: rgb(105, 213, 255);
   text-align: center;
   padding: 10px;
   display: block;
@@ -92,7 +101,6 @@ h6 {
 }
 
 #score {
-  background-color: aqua;
   text-align: center;
   padding: 10px;
 }
@@ -108,5 +116,12 @@ h6 {
 
 .row {
   padding: 5px;
+}
+
+ul, li {
+  font-size: calc(0.55em + 0.55vw);
+  max-width: 100%;
+  list-style: none;
+  padding: 2px;
 }
 

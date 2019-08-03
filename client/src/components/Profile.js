@@ -26,12 +26,24 @@ class Profile extends Component {
                     <div className="row">
                         <div id="wait" className="col-4">
                             <h6><strong>Waitlist</strong></h6>
+                            <ul>
+                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Start</button></li>
+                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Start</button></li>
+                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Start</button></li>
+                            </ul>
                         </div>
                         <div id="inprocess" className="col-4">
                             <h6><strong>In Process</strong></h6>
+                            <ul>
+                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Done</button></li>
+                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Done</button></li>
+                            </ul>
                         </div>
                         <div id="done" className="col-4">
                             <h6><strong>Done</strong></h6>
+                            <ul>
+                                <li>O-08-001</li>
+                            </ul>
                         </div>
                     </div>
                     {/* <ProviderCard title="Local" provider={user.local} bgColor="gray" handleLogin={localLogin} />    */}
@@ -42,78 +54,168 @@ class Profile extends Component {
                         width="100%">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col"># O.P.</th>
+                                <th scope="col">DATE 1</th>
+                                <th scope="col">P.N.</th>
+                                <th scope="col">CUST</th>
+                                <th scope="col">MAT</th>
+                                <th scope="col">P.O.</th>
+                                <th scope="col">QTY</th>
+                                <th scope="col"># L.P.</th>
+                                <th scope="col">DATE 2</th>
+                                <th scope="col">EQUIP</th>
+                                <th scope="col">SUP</th>
+                                <th scope="col">OPER</th>
+                                <th scope="col">INSP</th>
+                                <th scope="col">OK QTY</th>
+                                <th scope="col">NOK QTY</th>
+                                <th scope="col">DATE 3</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td>O-08-001</td>
+                                <td>08/02/2019</td>
+                                <td>GC-0001</td>
+                                <td>GLASS CO.</td>
+                                <td>STEEL 1</td>
+                                <td>A-2392</td>
+                                <td>3,000</td>
+                                <td>L-08-0001</td>
+                                <td>08/03/2019</td>
+                                <td>CNC 1</td>
+                                <td>Tommy Hillfiger</td>
+                                <td>Mike Tyson</td>
+                                <td>Johny Cash</td>
+                                <td>1,195</td>
+                                <td>5</td>
+                                <td>08/04/2019</td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td>O-08-001</td>
+                                <td>08/02/2019</td>
+                                <td>GC-0001</td>
+                                <td>GLASS CO.</td>
+                                <td>STEEL 1</td>
+                                <td>A-2392</td>
+                                <td>3,000</td>
+                                <td>L-08-0001</td>
+                                <td>08/03/2019</td>
+                                <td>CNC 1</td>
+                                <td>Tommy Hillfiger</td>
+                                <td>Mike Tyson</td>
+                                <td>Johny Cash</td>
+                                <td>1,195</td>
+                                <td>5</td>
+                                <td>08/04/2019</td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>Bird</td>
-                                <td>@twitter</td>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td>O-08-001</td>
+                                <td>08/02/2019</td>
+                                <td>GC-0001</td>
+                                <td>GLASS CO.</td>
+                                <td>STEEL 1</td>
+                                <td>A-2392</td>
+                                <td>3,000</td>
+                                <td>L-08-0001</td>
+                                <td>08/03/2019</td>
+                                <td>CNC 1</td>
+                                <td>Tommy Hillfiger</td>
+                                <td>Mike Tyson</td>
+                                <td>Johny Cash</td>
+                                <td>1,195</td>
+                                <td>5</td>
+                                <td>08/04/2019</td>
+                            </tr>
+                            <tr>
+                                <td>O-08-001</td>
+                                <td>08/02/2019</td>
+                                <td>GC-0001</td>
+                                <td>GLASS CO.</td>
+                                <td>STEEL 1</td>
+                                <td>A-2392</td>
+                                <td>3,000</td>
+                                <td>L-08-0001</td>
+                                <td>08/03/2019</td>
+                                <td>CNC 1</td>
+                                <td>Tommy Hillfiger</td>
+                                <td>Mike Tyson</td>
+                                <td>Johny Cash</td>
+                                <td>1,195</td>
+                                <td>5</td>
+                                <td>08/04/2019</td>
+                            </tr>
+                            <tr>
+                                <td>O-08-001</td>
+                                <td>08/02/2019</td>
+                                <td>GC-0001</td>
+                                <td>GLASS CO.</td>
+                                <td>STEEL 1</td>
+                                <td>A-2392</td>
+                                <td>3,000</td>
+                                <td>L-08-0001</td>
+                                <td>08/03/2019</td>
+                                <td>CNC 1</td>
+                                <td>Tommy Hillfiger</td>
+                                <td>Mike Tyson</td>
+                                <td>Johny Cash</td>
+                                <td>1,195</td>
+                                <td>5</td>
+                                <td>08/04/2019</td>
+                            </tr>
+                            <tr>
+                                <td>O-08-001</td>
+                                <td>08/02/2019</td>
+                                <td>GC-0001</td>
+                                <td>GLASS CO.</td>
+                                <td>STEEL 1</td>
+                                <td>A-2392</td>
+                                <td>3,000</td>
+                                <td>L-08-0001</td>
+                                <td>08/03/2019</td>
+                                <td>CNC 1</td>
+                                <td>Tommy Hillfiger</td>
+                                <td>Mike Tyson</td>
+                                <td>Johny Cash</td>
+                                <td>1,195</td>
+                                <td>5</td>
+                                <td>08/04/2019</td>
+                            </tr>
+                            <tr>
+                                <td>O-08-001</td>
+                                <td>08/02/2019</td>
+                                <td>GC-0001</td>
+                                <td>GLASS CO.</td>
+                                <td>STEEL 1</td>
+                                <td>A-2392</td>
+                                <td>3,000</td>
+                                <td>L-08-0001</td>
+                                <td>08/03/2019</td>
+                                <td>CNC 1</td>
+                                <td>Tommy Hillfiger</td>
+                                <td>Mike Tyson</td>
+                                <td>Johny Cash</td>
+                                <td>1,195</td>
+                                <td>5</td>
+                                <td>08/04/2019</td>
+                            </tr>
+                            <tr>
+                                <td>O-08-001</td>
+                                <td>08/02/2019</td>
+                                <td>GC-0001</td>
+                                <td>GLASS CO.</td>
+                                <td>STEEL 1</td>
+                                <td>A-2392</td>
+                                <td>3,000</td>
+                                <td>L-08-0001</td>
+                                <td>08/03/2019</td>
+                                <td>CNC 1</td>
+                                <td>Tommy Hillfiger</td>
+                                <td>Mike Tyson</td>
+                                <td>Johny Cash</td>
+                                <td>1,195</td>
+                                <td>5</td>
+                                <td>08/04/2019</td>
                             </tr>
                         </tbody>
                     </table>
