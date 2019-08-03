@@ -103,12 +103,20 @@ class App extends Component {
       <Router>
         <div className="block">
           <Navbar />
-          <p className="loginmsg">
-          {this.state.loggedIn &&  
-            <div className="text-right">
-              <button className="btn btn-dark" onClick={this.logout}>Logout
-                </button></div>}      
-            isLogged in: {JSON.stringify(this.state.loggedIn)}, user model: {JSON.stringify(this.state.user)}</p>
+          <div className="row" id="loginbar">
+                <div className="col-6">
+              { this.state.user &&
+                <p className="loginmsg">
+                <span>Welcome <strong>{this.state.user.local.email}</strong></span></p>
+              }
+              </div>
+              {
+                this.state.loggedIn &&
+                <div className="col-6" id="logoutbtn">
+                  <button className="btn btn-dark btn-sm" onClick={this.logout}>Logout</button>
+                </div>
+              }
+          </div>
           {
             this.state.isReady && (
               <Switch>
@@ -118,7 +126,7 @@ class App extends Component {
               </Switch>
             )
           }
-        <Footer />
+          <Footer />
         </div>
       </Router>
     );

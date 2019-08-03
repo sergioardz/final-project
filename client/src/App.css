@@ -32,16 +32,25 @@ body {
   font-size: calc(0.55em + 0.55vw);
 }
 
+#loginbar {
+  padding-top: 70px;
+  height: 200px;
+}
+
 .loginmsg {
+  line-height: 30px;
   font-size: calc(0.55em + 0.55vw);
-  text-align: right;
-  padding-right: 20px;
+  text-align: left;
+  padding-left: 20px;
   color: darkblue;
   padding-top: 90px;
 }
 
-.logout {
-  text-align: left;
+#logoutbtn {
+  text-align: right;
+  padding-top: 90px;
+  padding-right: 30px;
+  padding-bottom: 10px;
 }
 
 #maindash {
@@ -69,10 +78,17 @@ padding: 10px;
   background-color: white;
   text-align: center;
   padding: 10px;
-  font-size: calc(0.5em + 0.5vw);
   display: block;
   overflow-x: auto;
   white-space: nowrap;
+}
+
+h2 {
+  font-size: calc(1em + 1vw);
+}
+
+h6 {
+  font-size: calc(0.75em + 0.75vw);
 }
 
 #score {
@@ -88,5 +104,9 @@ padding: 10px;
 .responsive {
   width: 100%;
   height: auto;
+}
+
+.row {
+  padding: 5px;
 }
 
