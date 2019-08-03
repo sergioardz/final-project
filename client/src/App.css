@@ -43,3 +43,50 @@ body {
 .logout {
   text-align: left;
 }
+
+#maindash {
+  background-color: aqua;
+  text-align: center;
+  padding: 10px;
+}
+
+#wait {
+background-color: lightgray;
+padding: 10px;
+}
+
+#inprocess {
+  background-color:lightyellow;
+  padding: 10px;
+}
+
+#done {
+  background-color:lightgreen;
+  padding: 10px;
+}
+
+#table {
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: calc(0.5em + 0.5vw);
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#score {
+  background-color: aqua;
+  text-align: center;
+  padding: 10px;
+}
+
+.wrapper {
+  padding: 10px;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+

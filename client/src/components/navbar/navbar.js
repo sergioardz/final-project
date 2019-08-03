@@ -1,20 +1,21 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = props => (
   <header>
     <nav className="navbar navbar-light border-bottom fixed-top">
-      <a className="navbar-brand" href="/">
+      <Link className="navbar-brand" to="/">
         <img src={require("../../images/KLE.jpg")} width="auto" height="40" className="d-inline-block align-top" alt="" />
         <strong> KLE+WERT</strong>
-      </a>
+      </Link>
       <p>Smart Solutions and Value-Add Actions</p>
       <div className="nav-item justify-content-end">
-        <a className="p-2 text-dark active" href="/"><strong>Home</strong></a>
-        <a className="p-2 text-dark active" href="/main"><strong>Dashboard</strong></a>
-        <a className="p-2 text-dark active" href="signup"><strong>Register</strong></a>
-        <a className="btn btn-outline-info" href="login">Log in</a>
-        {/* <a className="p-2 text-dark active" href="#"><strong>Logout</strong></a> */}
+        <Link className="p-2 text-dark active" to="/"><strong>Home</strong></Link>
+        <Link className="p-2 text-dark active" to="/main"><strong>Dashboard</strong></Link>
+        <Link className="p-2 text-dark active" to="signup"><strong>Register</strong></Link>
+        <Link className="btn btn-outline-info" to="login">Log in</Link>
+        {/* <Link className="p-2 text-dark active" to="#"><strong>Logout</strong></Link> */}
       </div>
     </nav>
   </header>
