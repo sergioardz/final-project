@@ -30,8 +30,8 @@ const PrivateRoute = ({ component: Component, auth, ...rest }) => {
 }
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       loggedIn: false,
       user: null,
@@ -99,33 +99,29 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <Router>
         <div className="block">
-          <Navbar />
+          <Navbar user={this.state.user} />
           <div className="row" id="loginbar">
-                <div className="col-6">
-              { this.state.user &&
+            <div className="col-6">
+              {this.state.user && (
                 <p className="loginmsg">
-                <span>Welcome <strong>{this.state.user.local.email}</strong></span></p>
-              }
-              </div>
-              {
-                this.state.loggedIn &&
-                <div className="col-6" id="logoutbtn">
-                  <button className="btn btn-dark btn-sm" onClick={this.logout}>Logout</button>
-                </div>
-              }
+                  <span>Welcome <strong>{this.state.user.local.email}</strong></span>
+                </p>)}
+            </div>
+            {this.state.loggedIn && (
+              <div className="col-6" id="logoutbtn">
+                <button className="btn btn-dark btn-sm" onClick={this.logout}>Logout</button>
+              </div>)}
           </div>
-          {
-            this.state.isReady && (
-              <Switch>
-                <PrivateRoute auth={this.state} path="/main" component={Profile} />
-                <Route exact path="/" component={Homepage} />
-                <Route path="/" render={() => <Home login={this.login} logout={this.logout} />} />
-              </Switch>
-            )
-          }
+          {this.state.isReady && (
+            <Switch>
+              <PrivateRoute auth={this.state} path="/main" component={Profile} />
+              <Route exact path="/" component={Homepage} />
+              <Route path="/" render={() => <Home login={this.login} logout={this.logout} />} />
+            </Switch>)}
           <Footer />
         </div>
       </Router>

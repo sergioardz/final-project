@@ -38,7 +38,7 @@ body {
 }
 
 .loginmsg {
-  line-height: 30px;
+  line-height: 20px;
   font-size: calc(0.55em + 0.55vw);
   text-align: left;
   padding-left: 20px;
@@ -53,51 +53,17 @@ body {
   padding-bottom: 10px;
 }
 
-#maindash {
-  text-align: center;
-  padding: 10px;
-}
-
-#wait {
-  background-color: white;
-  padding-top: 10px;
-  padding-left: 0;
-  padding-bottom: 0;
-  padding-right: 0;
-}
-
-#inprocess {
-  background-color:rgba(255, 255, 88, 0.904);
-  padding-top: 10px;
-  padding-left: 0;
-  padding-bottom: 0;
-  padding-right: 0;
-}
-
-#done {
-  background-color:rgba(8, 177, 112, 0.644);
-  padding-top: 10px;
-  padding-left: 0;
-  padding-bottom: 0;
-  padding-right: 0;
-  font-weight: bolder;
-}
-
 #table {
   background-color: rgb(105, 213, 255);
   text-align: center;
   padding: 10px;
   display: block;
   overflow-x: auto;
+  overflow-y: auto;
   white-space: nowrap;
-}
-
-h2 {
-  font-size: calc(1em + 1vw);
-}
-
-h6 {
-  font-size: calc(0.75em + 0.75vw);
+  max-height: 200px;
+  position: relative;
+  border-collapse: collapse;
 }
 
 #score {
@@ -123,5 +89,13 @@ ul, li {
   max-width: 100%;
   list-style: none;
   padding: 2px;
+}
+
+tbody {
+  font-size: calc(0.45em + 0.45vw);
+}
+
+thead {
+  font-size: calc(0.5em + 0.5vw);
 }
 

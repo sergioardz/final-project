@@ -1,0 +1,18 @@
+#maindash {
+    text-align: center;
+    padding: 10px;
+  }
+
+.subtitle {
+  background-color: rgb(233, 233, 233);
+  border-style: groove;
+  border-radius: 5px;
+  border-color: rgb(233, 233, 233);
+}
+
+.maintitle {
+  background-color: rgb(233, 233, 233);
+  border-style: groove;
+  border-radius: 5px;
+  border-color: rgb(233, 233, 233);
+}

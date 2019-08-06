@@ -1,0 +1,6 @@
+h2 {
+  font-size: calc(1em + 1vw);
+  padding-top: 6px;
+  color: darkblue;
+  font-weight: 400;
+  }

@@ -7,6 +7,7 @@ class SignupForm extends Component {
 		super()
 		this.state = {
 			email: '',
+			role: '',
 			password: '',
 			confirmPassword: '',
 			redirectTo: null
@@ -24,6 +25,7 @@ class SignupForm extends Component {
 		axios
 			.post('/auth/signup', {
 				email: this.state.email,
+				role: this.state.role,
 				password: this.state.password
 			})
 			.then(response => {
@@ -57,6 +59,16 @@ class SignupForm extends Component {
 							/>
 						</div>
 						<div className="form-group">
+							<label htmlFor="role">Role: </label>
+							<input
+								class="form-control form-control-sm"
+								type="text"
+								name="role"
+								value={this.state.role}
+								onChange={this.handleChange}
+							/>
+						</div>
+						<div className="form-group">
 							<label htmlFor="password">Password: </label>
 							<input
 								class="form-control form-control-sm"
@@ -77,7 +89,7 @@ class SignupForm extends Component {
 							/>
 						</div>
 						<div className="text-center">
-							<button className="btn btn-info" onClick={this.handleSubmit}>Sign up</button>
+							<button className="btn btn-info btn-sm" onClick={this.handleSubmit}>Sign up</button>
 						</div>
 					</div>
 				</div>

@@ -1,0 +1,4 @@
+h6 {
+    font-size: calc(0.75em + 0.75vw);
+    padding-top: 6px;
+  }

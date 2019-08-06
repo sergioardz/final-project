@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios"
 import ProviderCard from "../components/ProviderCard"
+import Dashboard from "./dashboard";
 import scorecard from "../images/scorecard.jpg"
 
 class Profile extends Component {
@@ -21,35 +22,11 @@ class Profile extends Component {
 
         return (
             <div className="wrapper">
-                <div className="container" id="maindash">
-                    <h2>Dashboard</h2>
-                    <div className="row">
-                        <div id="wait" className="col-4">
-                            <h6><strong>Waitlist</strong></h6>
-                            <ul>
-                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Start</button></li>
-                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Start</button></li>
-                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Start</button></li>
-                            </ul>
-                        </div>
-                        <div id="inprocess" className="col-4">
-                            <h6><strong>In Process</strong></h6>
-                            <ul>
-                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Done</button></li>
-                                <li>O-08-001 <button className="btn btn-outline-info btn-sm">Done</button></li>
-                            </ul>
-                        </div>
-                        <div id="done" className="col-4">
-                            <h6><strong>Done</strong></h6>
-                            <ul>
-                                <li>O-08-001</li>
-                            </ul>
-                        </div>
-                    </div>
-                    {/* <ProviderCard title="Local" provider={user.local} bgColor="gray" handleLogin={localLogin} />    */}
-                </div>
+                <Dashboard />
                 <div className="container" id="table">
-                    <h2>Statistics</h2>
+                    <div id="title">
+                        <h2>Statistics</h2>
+                    </div>
                     <table id="dtHorizontalExample" class="table table-striped table-bordered table-sm" cellspacing="0"
                         width="100%">
                         <thead>
@@ -222,7 +199,7 @@ class Profile extends Component {
                 </div>
                 <div className="container" id="score">
                     <h2>ScoreCard</h2>
-                    <img src={scorecard} alt="" class="responsive"></img>
+                    <img src={scorecard} alt="" className="responsive"></img>
                 </div>
             </div>
         );

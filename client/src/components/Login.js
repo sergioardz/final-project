@@ -59,7 +59,7 @@ class LoginForm extends Component {
                   />
                 </div>
                 <div className="text-center">
-                  <button className="btn btn-info" onClick={this.handleSubmit}>Login</button>
+                  <button className="btn btn-info btn-sm" onClick={this.handleSubmit}>Login</button>
                 </div>
               </form>
             </div>
