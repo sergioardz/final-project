@@ -7,6 +7,7 @@ const MongoStore = require('connect-mongo')(session)
 import dbConnection from "./db"
 import passport from "./passport"
 const app = express()
+// import Order from "./db/models"
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
@@ -38,6 +39,15 @@ app.use(router)
 
 app.use('/auth', require('./routes/auth'))
 // app.use('/main', require('./routes/main'))
+
+// app.post("/neworder", function (req, res) {
+// 	Order.create(req.body)
+// 		.then(function (dbOrder) {
+// 		})
+// 		.catch(function (err) {
+// 			res.json(err);
+// 		});
+// });
 
 // any routes not picked up by the server api will be handled by the react router
 app.use('/*', staticFiles)

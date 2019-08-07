@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../db/models/user')
+const Order = require('../db/models/orders')
 const passport = require('../passport')
 
 // this route is just used to get the user basic info
@@ -16,7 +17,7 @@ router.get('/user', (req, res, next) => {
 
 router.post(
 	'/login',
-	function(req, res, next) {
+	function (req, res, next) {
 		// console.log(req.body)
 		console.log('================')
 		next()
@@ -63,5 +64,57 @@ router.post('/signup', (req, res) => {
 		})
 	})
 })
+
+router.post("/neworder", function (req, res) {
+	const newOrder = new Order({
+		'customer': req.body.customer,
+		'partnumber': req.body.partnumber,
+		'orderquantity': req.body.orderquantity
+	})
+	newOrder.save((err, savedUser) => {
+		if (err) return res.json(err)
+		return res.json(savedUser)
+	})
+});
+
+// router.post("/moveinprocess", function (req, res) {
+// 	Order.findByIdAndUpdate({ })
+// 		.then(function (dbOrders) {
+// 			res.json(dbOrders);
+// 		})
+// 		.catch(function(err) {
+// 			res.json(err);
+// 		});
+// });
+
+router.get('/orders', (req, res) => {
+	Order.find({ inprocess: false, finished: false })
+		.then(function (dbOrders) {
+			res.json(dbOrders);
+		})
+		.catch(function(err) {
+			res.json(err);
+		});
+});
+
+router.get('/ordersinprocess', (req, res) => {
+	Order.find({ inprocess: true, finished: false })
+		.then(function (dbOrders) {
+			res.json(dbOrders);
+		})
+		.catch(function(err) {
+			res.json(err);
+		});
+});
+
+router.get('/ordersdone', (req, res) => {
+	Order.find({ inprocess: true, finished: true })
+		.then(function (dbOrders) {
+			res.json(dbOrders);
+		})
+		.catch(function(err) {
+			res.json(err);
+		});
+});
 
 module.exports = router

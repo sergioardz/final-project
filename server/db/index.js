@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const keys = require(".././config/keys")
 
-mongoose.connect(keys.mongoUrl)
+mongoose.connect(keys.mongoUrl, { useNewUrlParser: true })
 
 const db = mongoose.connection
 db.on('error', err => {

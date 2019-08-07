@@ -3,3 +3,14 @@
     padding: 0;
     border-radius: 5px;
   }
+
+.waitlistitem {
+  text-align: center;
+  padding: 2px;
+}
+
+#neworderbtn {
+  text-align: right;
+  padding-bottom: 10px;
+  padding-right: 20px;
+}

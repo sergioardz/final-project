@@ -1,9 +1,10 @@
 #maindash {
-    text-align: center;
+    /* text-align: center; */
     padding: 10px;
   }
 
-.subtitle {
+#subtitle {
+  text-align: center;
   background-color: rgb(233, 233, 233);
   border-style: groove;
   border-radius: 5px;
@@ -11,8 +12,13 @@
 }
 
 .maintitle {
-  background-color: rgb(233, 233, 233);
+  text-align: center;
+  /* background-color: rgb(233, 233, 233);
   border-style: groove;
   border-radius: 5px;
-  border-color: rgb(233, 233, 233);
+  border-color: rgb(233, 233, 233); */
+}
+
+.listitems {
+  padding-top: 2px;
 }
