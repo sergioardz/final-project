@@ -14,7 +14,7 @@ class Waitlist extends Component {
             customer: "",
             partnumber: "",
             orderquantity: "",
-            // inprocess: "",
+            inprocess: "",
             showModal: false,
             orders: []
         };
@@ -22,11 +22,11 @@ class Waitlist extends Component {
         this.close = this.close.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.moveToInProcess = this.moveToInProcess.bind(this);
     }
 
     componentDidMount() {
         this.loadOrders();
-        console.log(this.state.orders);
     }
 
     loadOrders = () => {
@@ -36,11 +36,17 @@ class Waitlist extends Component {
             .catch(err => console.log(err));
     };
 
-    // moveToInProcess(e) {
-    //     e.preventDefault();
-    //     axios
-    //         .post("/auth/moveinprocess")
-    // }
+    moveToInProcess(id) {
+        // e.preventDefault();
+        // alert(id);
+        axios
+            .put("/auth/process/" + id , {
+                inprocess: true
+            }).catch(function (error) {
+                console.log(error);
+              });
+        this.loadOrders();
+    }
 
     close() {
         this.setState({ showModal: false });
@@ -138,7 +144,12 @@ class Waitlist extends Component {
                                 <li className="waitlistitem">
                                     <strong>PN: </strong>{order.partnumber} - {""}
                                     <strong>Qty: </strong>{(order.orderquantity).toLocaleString()} {""}
-                                    <button key={order._id} className="btn btn-outline-info btn-sm">Start</button><hr />
+                                    <button 
+                                        key={order._id} 
+                                        onClick={this.moveToInProcess.bind(this, order._id)} 
+                                        className="btn btn-outline-info btn-sm">
+                                    Start
+                                    </button><hr />
                                 </li>
                             ))}
                         </ul>}

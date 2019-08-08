@@ -6,7 +6,7 @@
     overflow-x: auto;
     overflow-y: auto;
     white-space: nowrap;
-    max-height: 200px;
-    position: relative;
-    border-collapse: collapse;
+    /* max-height: 200px; */
+    /* position: relative; */
+    /* border-collapse: collapse; */
   }

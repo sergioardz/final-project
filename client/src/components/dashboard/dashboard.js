@@ -9,7 +9,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="container" id="maindash">
-                <MainTitle title="Dashboard" />
+                <MainTitle title="Production Orders Status" />
                 <div className="row">
                     <Waitlist />
                     <InProcess />

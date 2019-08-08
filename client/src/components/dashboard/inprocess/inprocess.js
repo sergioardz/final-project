@@ -24,23 +24,21 @@ class InProcess extends Component {
 
     componentDidMount() {
         this.loadOrders();
-        // console.log(this.state.orders);
     }
 
-    loadOrders() {
+    loadOrders = () => {
         axios
             .get("/auth/ordersinprocess")
             .then(res => this.setState({ orders: res.data }))
             .catch(err => console.log(err));
-        // console.log(this.state.orders);
     }
 
     close() {
-        this.setState({ showModal: false });
+        this.setState({ showModal: false, selectedId: null });
     }
 
-    open() {
-        this.setState({ showModal: true });
+    open(id) {
+        this.setState({ showModal: true, selectedId: id });
     }
 
     handleChange(e) {
@@ -49,10 +47,9 @@ class InProcess extends Component {
         });
     }
 
-    handleSubmit(e) {
-        e.preventDefault()
+    handleSubmit(id) {
         axios
-            .post('auth/neworder', {
+            .put('auth/process/' + id, {
                 quantityOK1: this.state.quantityOK1,
                 quantityOK2: this.state.quantityOK2,
                 quantityX: this.state.quantityX,
@@ -73,8 +70,10 @@ class InProcess extends Component {
             quantityOK1: "",
             quantityOK2: "",
             quantityX: "",
-            finished: ""
+            finished: "",
+            selectedId: null
         });
+        this.loadOrders();
     }
 
     render() {
@@ -88,14 +87,19 @@ class InProcess extends Component {
                                 <li className="inprocessitem">
                                     <strong>PN: </strong>{order.partnumber} - {""}
                                     <strong>Qty: </strong>{(order.orderquantity).toLocaleString()} {""}
-                                    <button key={order._id} onClick={this.open} className="btn btn-outline-info btn-sm">Done</button><hr />
+                                    <button 
+                                        key={order._id} 
+                                        onClick={this.open.bind(this, order._id)} 
+                                        className="btn btn-outline-info btn-sm">
+                                    Done
+                                    </button><hr />
                                 </li>
                             ))}
                         </ul>}
                 </div>
                 <Modal show={this.state.showModal} onHide={this.close}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>New Production Order</Modal.Title>
+                    <Modal.Header closeButton> { this.state.selectedId &&
+                        <Modal.Title>Order: {(this.state.selectedId).slice(-6)}</Modal.Title>}
                     </Modal.Header>
                     <Modal.Body>
                         <div className="neworder">
@@ -130,17 +134,23 @@ class InProcess extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="finished">Is Order ready: </label>
-                                <input
-                                    class="form-control form-control-sm"
-                                    type="text"
-                                    name="customer"
+                                <label htmlFor="finished">Is Order ready:</label>
+                                <select 
+                                    className="custom-select"
+                                    name="finished"
                                     value={this.state.finished}
                                     onChange={this.handleChange}
-                                />
+                                    >
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select>
                             </div>
                             <div className="text-center">
-                                <button onClick={this.handleSubmit} className="btn btn-info btn-sm">Submit</button>
+                                <button 
+                                    onClick={this.handleSubmit.bind(this, this.state.selectedId)} 
+                                    className="btn btn-info btn-sm">
+                                Submit
+                                </button>
                             </div>
                         </div>
                     </Modal.Body>

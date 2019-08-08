@@ -77,15 +77,12 @@ router.post("/neworder", function (req, res) {
 	})
 });
 
-// router.post("/moveinprocess", function (req, res) {
-// 	Order.findByIdAndUpdate({ })
-// 		.then(function (dbOrders) {
-// 			res.json(dbOrders);
-// 		})
-// 		.catch(function(err) {
-// 			res.json(err);
-// 		});
-// });
+router.put("/process/:id", function (req, res) {
+	console.log(req.params.id);
+	Order.findByIdAndUpdate(req.params.id, req.body)
+	.then(dbModel => res.json(dbModel))
+	.catch(err => res.status(422).json(err));
+});
 
 router.get('/orders', (req, res) => {
 	Order.find({ inprocess: false, finished: false })

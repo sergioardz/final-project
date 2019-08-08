@@ -33,7 +33,7 @@ class Statistics extends Component {
         axios
             .get("/auth/ordersdone")
             .then(res => this.setState({ orders: res.data }))
-            .catch(err => console.log(err));
+            .catch(err => console.log(err)); 
     };
 
     render() {
