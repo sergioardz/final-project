@@ -141,8 +141,9 @@ class InProcess extends Component {
                                     value={this.state.finished}
                                     onChange={this.handleChange}
                                     >
-                                    <option value="false">No</option>
+                                    <option> - select one - </option>
                                     <option value="true">Yes</option>
+                                    <option value="false">No</option>
                                 </select>
                             </div>
                             <div className="text-center">

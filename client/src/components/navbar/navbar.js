@@ -9,7 +9,7 @@ class Navbar extends Component {
         <nav className="navbar navbar-light border-bottom fixed-top">
           <Link className="navbar-brand" to="/">
             <img src={require("../../images/KLE.jpg")} width="auto" height="40" className="d-inline-block align-top" alt="" />
-            <strong> KLE+WERT</strong>
+            <strong> KLEWER <i class="fas fa-plus"></i></strong>
           </Link>
           <p>Smart Solutions and Value-Add Actions</p>
           <div className="nav-item justify-content-end">

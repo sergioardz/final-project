@@ -36,8 +36,8 @@ class Waitlist extends Component {
             .catch(err => console.log(err));
     };
 
-    moveToInProcess(id) {
-        // e.preventDefault();
+    moveToInProcess(id, e) {
+        e.preventDefault();
         // alert(id);
         axios
             .put("/auth/process/" + id , {
@@ -102,23 +102,40 @@ class Waitlist extends Component {
                         <div className="neworder">
                             <div className="form-group">
                                 <label htmlFor="customer">Customer: </label>
-                                <input
-                                    class="form-control form-control-sm"
-                                    type="text"
+                                <select 
+                                    className="custom-select"
                                     name="customer"
                                     value={this.state.customer}
                                     onChange={this.handleChange}
-                                />
+                                    >
+                                    <option> - select one - </option>
+                                    <option value="Glass Co.">Glass Co.</option>
+                                    <option value="Transport Co.">Transport Co.</option>
+                                    <option value="Oil & Gas Co.">Oil & Gas Co.</option>
+                                    <option value="Mining Co.">Mining Co.</option>
+                                    <option value="Automotive Co.">Automotive Co.</option>
+                                </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="partnumber">Part Number: </label>
-                                <input
-                                    class="form-control form-control-sm"
-                                    type="text"
+                                <select 
+                                    className="custom-select"
                                     name="partnumber"
                                     value={this.state.partnumber}
                                     onChange={this.handleChange}
-                                />
+                                    >
+                                    <option> - select one - </option>
+                                    <option value="GC-001">GC-001</option>
+                                    <option value="GC-002">GC-002</option>
+                                    <option value="TC-001">TC-001</option>
+                                    <option value="TC-002">TC-002</option>
+                                    <option value="OGC-001">OGC-001</option>
+                                    <option value="OGC-002">OGC-002</option>
+                                    <option value="MC-001">MC-001</option>
+                                    <option value="MC-002">MC-002</option>
+                                    <option value="AC-001">AC-001</option>
+                                    <option value="AC-002">AC-002</option>
+                                </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="orderquantity">Order Quantity: </label>

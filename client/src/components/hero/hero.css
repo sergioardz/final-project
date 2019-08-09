@@ -1,7 +1,7 @@
 .jumbotron {
     min-height: 160px;
     height: 360px;
-    background-color: rgb(105, 213, 255);
+    background-color: rgb(105, 213, 255, 0.6);
     background-image: url("../../images/hero.jpg");
     background-size: contain;
     background-repeat: no-repeat;

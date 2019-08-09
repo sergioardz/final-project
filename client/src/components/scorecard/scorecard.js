@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Bar, Line, HorizontalBar, Pie } from "react-chartjs-2";
+import "./scorecard.css";
 
 
 class Scorecard extends Component {
@@ -23,39 +24,46 @@ class Scorecard extends Component {
     render() {
         return (
             <div className="container" id="score">
-                <h2>ScoreCard</h2>
-                <div className="row">
+                <h2>ScoreCard</h2><hr />
+                <div>
+                    <h5>Customer Share by PN Quantity</h5>
+                    <Pie data={this.state.chartData1} />
+                </div><hr />
+                <div>
+                    <h5>Scrap</h5>
+                    <Line 
+                        data={this.state.chartData2}
+                        width={100}
+                        height={60} />
+                </div><hr />
+                <div>
+                    <h5>First Pass Yield 1 - Rate</h5>
+                    <Bar
+                        data={this.state.chartData3}
+                        width={100}
+                        height={150}
+                        options={{ maintainAspectRatio: false }}
+                    />
+                </div><hr />
+                <div>
+                    <h5>First Pass Yield 2 - Rate</h5>
+                    <Bar
+                        data={this.state.chartData4}
+                        width={100}
+                        height={150}
+                        options={{ maintainAspectRatio: false }}
+                    />
+                </div><hr />
+
+                {/* <div className="row">
                     <div className="col-6">
                         <div className="chart">
-                            <Pie
-                                data={this.state.chartData1}
-                                options={{
-                                    maintainAspectRatio: true,
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
-                                                beginAtZero: true,
-                                            }
-                                        }]
-                                    }
-                                }}
-                            />
+                            <Pie data={this.state.chartData1} />
                         </div>
                     </div>
                     <div className="col-6">
                         <div className="chart">
-                            <Line
-                                data={this.state.chartData2}
-                                options={{
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
-                                                beginAtZero: false
-                                            }
-                                        }]
-                                    }
-                                }}
-                            />
+                            <Line data={this.state.chartData2} />
                         </div>
                     </div>
                 </div>
@@ -64,15 +72,7 @@ class Scorecard extends Component {
                         <div className="chart">
                             <Bar
                                 data={this.state.chartData3}
-                                options={{
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
-                                                beginAtZero: false
-                                            }
-                                        }]
-                                    }
-                                }}
+                                options={{scales: {yAxes: [{ticks: {beginAtZero: false,}}]}}}
                             />
                         </div>
                     </div>
@@ -80,19 +80,11 @@ class Scorecard extends Component {
                         <div className="chart">
                             <Bar
                                 data={this.state.chartData4}
-                                options={{
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
-                                                beginAtZero: false
-                                            }
-                                        }]
-                                    }
-                                }}
+                                options={{scales: {yAxes: [{ticks: {beginAtZero: false,}}]}}}
                             />
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }

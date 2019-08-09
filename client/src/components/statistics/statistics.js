@@ -40,7 +40,7 @@ class Statistics extends Component {
         return (
             <div className="container" id="table">
                 <div id="title">
-                    <h2>Finished Orders Statistics</h2>
+                    <h2>Production Orders Statistics</h2>
                 </div>
                 <table id="dtHorizontalExample" class="table table-striped table-bordered table-sm" cellspacing="0"
                     width="100%">
