@@ -54,33 +54,37 @@ class Scorecard extends Component {
                         options={{ maintainAspectRatio: false }}
                     />
                 </div><hr />
-
                 {/* <div className="row">
                     <div className="col-6">
-                        <div className="chart">
+                        <div>
+                            <h5>Customer Share by PN Quantity</h5>
                             <Pie data={this.state.chartData1} />
                         </div>
                     </div>
                     <div className="col-6">
-                        <div className="chart">
-                            <Line data={this.state.chartData2} />
+                        <div>
+                            <h5>Scrap</h5>
+                            <Line 
+                                data={this.state.chartData2}
+                                width={100}
+                                height={60} />
                         </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-6">
-                        <div className="chart">
+                        <div>
+                            <h5>First Pass Yield 1 - Rate</h5>
                             <Bar
                                 data={this.state.chartData3}
-                                options={{scales: {yAxes: [{ticks: {beginAtZero: false,}}]}}}
                             />
                         </div>
                     </div>
                     <div className="col-6">
-                        <div className="chart">
+                        <div>
+                            <h5>First Pass Yield 2 - Rate</h5>
                             <Bar
                                 data={this.state.chartData4}
-                                options={{scales: {yAxes: [{ticks: {beginAtZero: false,}}]}}}
                             />
                         </div>
                     </div>
