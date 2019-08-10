@@ -25,7 +25,7 @@ class Scorecard extends Component {
         return (
             <div className="container" id="score">
                 <h2>ScoreCard</h2><hr />
-                <div>
+                {/* <div>
                     <h5>Customer Share by PN Quantity</h5>
                     <Pie data={this.state.chartData1} />
                 </div><hr />
@@ -53,8 +53,8 @@ class Scorecard extends Component {
                         height={150}
                         options={{ maintainAspectRatio: false }}
                     />
-                </div><hr />
-                {/* <div className="row">
+                </div><hr /> */}
+                <div className="row">
                     <div className="col-6">
                         <div>
                             <h5>Customer Share by PN Quantity</h5>
@@ -88,7 +88,7 @@ class Scorecard extends Component {
                             />
                         </div>
                     </div>
-                </div> */}
+                </div><hr />
             </div>
         )
     }
